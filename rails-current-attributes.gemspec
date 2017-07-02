@@ -7,7 +7,7 @@ require "current_attributes/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rails-current-attributes"
-  spec.version       = Rails::CurrentAttributes::VERSION
+  spec.version       = CurrentAttributes::VERSION
   spec.authors       = ["David Heinemeier Hansson"]
   spec.email         = ["david@loudthinking.com"]
   spec.description   = %q{ Provides a thread-isolated attributes singleton. }
