@@ -11,7 +11,7 @@ _**Please note that**: This gem was extracted from this [commit](https://github.
 Add this line to your application's Gemfile:
 
 ```ruby
-    gem 'activesupport-current_attributes'
+  gem 'activesupport-current_attributes'
 ```
 
 And then execute:
