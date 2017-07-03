@@ -10,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.version       = CurrentAttributes::VERSION
   spec.authors       = ["David Heinemeier Hansson"]
   spec.email         = ["david@loudthinking.com"]
-  spec.description   = %q{ Provides a thread-isolated attributes singleton. }
-  spec.summary       = %q{ Provides a thread-isolated attributes singleton. }
-  spec.homepage      = "https://github.com/ahazem/rails-current-attributes"
+  spec.description   = %q{ Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. }
+  spec.summary       = %q{ Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. }
+  spec.homepage      = "https://github.com/ahazem/activesupport-current_attributes"
   spec.license       = "MIT"
 
   spec.files         = Dir["LICENSE.txt", "README.md", "lib/**/*"]
@@ -22,5 +22,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rack-test", "~> 0.6"
   spec.add_development_dependency "minitest", "~> 5.0"
 end
