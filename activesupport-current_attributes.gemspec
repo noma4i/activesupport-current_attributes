@@ -3,10 +3,10 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require "current_attributes/version"
+require "active_support/current_attributes/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "rails-current-attributes"
+  spec.name          = "activesupport-current_attributes"
   spec.version       = CurrentAttributes::VERSION
   spec.authors       = ["David Heinemeier Hansson"]
   spec.email         = ["david@loudthinking.com"]
