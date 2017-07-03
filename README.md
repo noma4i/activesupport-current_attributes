@@ -4,6 +4,8 @@
 
 Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. The singleton resets automatically before and after reach request. This allows you to keep all the per-request attributes easily available to the whole system.
 
+_**Please note that**: This gem was extracted from this [commit](https://github.com/rails/rails/commit/24a864437e845febe91e3646ca008e8dc7f76b56), which lands in Rails v5.2.0._*
+
 ## Installation
 
 Add this line to your application's Gemfile:
