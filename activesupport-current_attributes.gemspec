@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["david@loudthinking.com"]
   spec.description   = %q{ Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. }
   spec.summary       = %q{ Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. }
-  spec.homepage      = "https://github.com/ahazem/activesupport-current_attributes"
+  spec.homepage      = "https://github.com/coup-mobility/activesupport-current_attributes"
   spec.license       = "MIT"
 
   spec.files         = Dir["LICENSE.txt", "README.md", "lib/**/*"]
