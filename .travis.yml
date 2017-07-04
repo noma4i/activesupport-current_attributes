@@ -5,8 +5,30 @@ cache:
   - bundler: true
 
 rvm:
-  - 2.2.2
+  - 1.9.3
+  - 2.0.0
+  - 2.1.10
+  - 2.2.7
+  - 2.3.4
   - 2.4.1
+  - jruby
+
+gemfile:
+  - gemfiles/active_support_4.2.gemfile
+  - gemfiles/active_support_5.0.gemfile
+
+matrix:
+  exclude:
+      - rvm: 1.9.3
+        gemfile: gemfiles/active_support_5.0.gemfile
+      - rvm: 2.0.0
+        gemfile: gemfiles/active_support_5.0.gemfile
+      - rvm: 2.1.10
+        gemfile: gemfiles/active_support_5.0.gemfile
+      - rvm: 2.4.1
+        gemfile: gemfiles/active_support_4.2.gemfile
+      - rvm: jruby
+        gemfile: gemfiles/active_support_5.0.gemfile
 
 before_install:
   - gem install bundler
