@@ -184,7 +184,11 @@ module ActiveSupport
       end
 
       def compute_attributes(keys)
-        keys.collect { |key| [ key, public_send(key) ] }.to_h
+        if [].respond_to?(:to_h)
+          keys.collect { |key| [ key, public_send(key) ] }.to_h
+        else
+          keys.each_with_object({}) { |key, attributes| attributes[key] = public_send(key) }
+        end
       end
   end
 end
