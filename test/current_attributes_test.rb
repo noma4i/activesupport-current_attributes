@@ -1,4 +1,5 @@
 require "active_support"
+require "active_support/time"
 require "test_helper"
 
 class CurrentAttributesTest < ActiveSupport::TestCase
