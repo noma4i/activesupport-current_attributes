@@ -8,8 +8,8 @@ require "active_support/current_attributes/version"
 Gem::Specification.new do |spec|
   spec.name          = "activesupport-current_attributes"
   spec.version       = CurrentAttributes::VERSION
-  spec.authors       = ["David Heinemeier Hansson"]
-  spec.email         = ["david@loudthinking.com"]
+  spec.authors       = ["Coup Mobility GmbH"]
+  spec.email         = ["ahmed.hemdan@joincoup.com"]
   spec.description   = %q{ Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. }
   spec.summary       = %q{ Provides a thread-isolated attributes singleton for Rails applications pre v5.2.0. }
   spec.homepage      = "https://github.com/coup-mobility/activesupport-current_attributes"
