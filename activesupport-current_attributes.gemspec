@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/coup-mobility/activesupport-current_attributes"
   spec.license       = "MIT"
 
-  spec.files         = Dir["LICENSE.txt", "README.md", "lib/**/*"]
+  spec.files         = Dir["MIT-LICENSE", "README.md", "lib/**/*"]
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "activesupport",  ">= 4.2.0"
