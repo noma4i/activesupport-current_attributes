@@ -1,6 +1,6 @@
 module ActiveSupport
   # Abstract super class that provides a thread-isolated attributes singleton, which resets automatically
-  # before and after reach request. This allows you to keep all the per-request attributes easily
+  # before and after each request. This allows you to keep all the per-request attributes easily
   # available to the whole system.
   #
   # The following full app-like example demonstrates how to use a Current class to
@@ -31,7 +31,7 @@ module ActiveSupport
   #
   #     private
   #       def authenticate
-  #         if authenticated_user = User.find(cookies.signed[:user_id])
+  #         if authenticated_user = User.find_by(id: cookies.signed[:user_id])
   #           Current.user = authenticated_user
   #         else
   #           redirect_to new_session_url
@@ -87,9 +87,7 @@ module ActiveSupport
     class << self
       # Returns singleton instance for this class in this thread. If none exists, one is created.
       def instance
-        Thread.current[:"current_attributes_for_#{name}"] ||= new.tap do |instance|
-          current_instances << instance
-        end
+        current_instances[name] ||= new
       end
 
       # Declares one or more attributes that will be given both class and instance accessor methods.
@@ -125,7 +123,12 @@ module ActiveSupport
       delegate :set, :reset, to: :instance
 
       def reset_all # :nodoc:
-        current_instances.each(&:reset)
+        current_instances.each_value(&:reset)
+      end
+
+      def clear_all # :nodoc:
+        reset_all
+        current_instances.clear
       end
 
       private
@@ -134,7 +137,7 @@ module ActiveSupport
         end
 
         def current_instances
-          Thread.current[:current_attributes_instances] ||= []
+          Thread.current[:current_attributes_instances] ||= {}
         end
 
         def method_missing(name, *args, &block)
